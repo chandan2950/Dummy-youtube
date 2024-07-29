@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/appSlice";
-
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -16,7 +16,7 @@ const WatchPage = () => {
       <div className="px-5 flex w-full">
         <div className="">
           <iframe
-            width="1200"
+            width="1000"
             height="600"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"
@@ -25,11 +25,10 @@ const WatchPage = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="w-full">
-          
+        <div className="w-full h-300">
+          <LiveChat />
         </div>
       </div>
-     
     </div>
   );
 };
